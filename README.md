@@ -13,7 +13,7 @@ npm i --save oshare
 
 ## Server
 
-#### server( port: int, shared: object \[, [callback](#callback)\])
+#### server( port: int, shared: object \[, [callback](#callback)\] )
 
 ```javascript
 var share = require('oshare');
@@ -30,7 +30,7 @@ share.server(3000, shared, (alert) => {
 
 ## Client
 
-##### client( url: string, shared: object \[, [callback](#callback)\])
+#### client( url: string, shared: object \[, [callback](#callback)\] )
 
 ```javascript
 var share = require('oshare');
