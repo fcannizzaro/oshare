@@ -1,0 +1,19 @@
+{
+  "name": "nmi",
+  "version": "1.0.0",
+  "description": "Node Method Invocation",
+  "main": "index.js",
+  "keywords": [
+    "rmi",
+    "browser",
+    "nodejs"
+  ],
+  "author": "Francesco Cannizzaro",
+  "license": "MIT",
+  "dependencies": {
+    "dot-js": "^1.0.3",
+    "random-id": "0.0.2",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3"
+  }
+}
