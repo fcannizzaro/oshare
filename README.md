@@ -1,7 +1,5 @@
 # oshare
-Node Object Sharing (Socket)
-+ Method Invocation
-+ Support for callbacks
+Node Object Sharing (Socket) | Method Invocation | Support for callbacks
 
 ![](https://github.com/fcannizzaro/oshare/blob/master/logo.png?raw=true)
 
@@ -15,7 +13,7 @@ npm i --save oshare
 
 ## Server
 
-#### oshare.server( port: int, shared: object \[, [callback](#callback)\])
+#### server( port: int, shared: object \[, [callback](#callback)\])
 
 ```javascript
 var share = require('oshare');
@@ -32,7 +30,7 @@ share.server(3000, shared, (alert) => {
 
 ## Client
 
-##### oshare.client( url: string, shared: object \[, [callback](#callback)\])
+##### client( url: string, shared: object \[, [callback](#callback)\])
 
 ```javascript
 var share = require('oshare');
