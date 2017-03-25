@@ -1,7 +1,6 @@
-# oshare
-Node Object Sharing (Socket) | **Remote Method Invocation** | Support for **callbacks**
-
 ![](https://github.com/fcannizzaro/oshare/blob/master/logo.png?raw=true)
+
+Node Object Sharing (Socket) | **Remote Method Invocation** | Support for **callbacks**
 
 # Install
 
