@@ -1,19 +1,28 @@
 {
-  "name": "nmi",
+  "name": "oshare",
   "version": "1.0.0",
-  "description": "Node Method Invocation",
+  "description": "Node Object Sharing (Socket) |",
   "main": "index.js",
   "keywords": [
     "rmi",
+    "socket",
     "browser",
     "nodejs"
   ],
-  "author": "Francesco Cannizzaro",
+  "author": "Francesco Cannizzaro <francescosaveriocannizzaro@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "dot-js": "^1.0.3",
     "random-id": "0.0.2",
     "socket.io": "^1.7.3",
     "socket.io-client": "^1.7.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcannizzaro/oshare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fcannizzaro/oshare/issues"
+  },
+  "homepage": "https://github.com/fcannizzaro/oshare#readme"
 }

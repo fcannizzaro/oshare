@@ -61,6 +61,7 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 ```javascript
 
 // if shared object is
+
 var shared = {
   module1 : require('../something'),
   max: 5,
@@ -68,6 +69,7 @@ var shared = {
 }
 
 // callback will be
+
 var callback = (module1, fn, max) => {
   fn();
   console.log(max);
