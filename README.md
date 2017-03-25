@@ -55,7 +55,7 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 
 ## Callback
 
-- Arguments **should be ++keys++** of shared data of server/client.
+- Arguments **should be key** of shared data of server/client.
 - Order is **not** relevant.
 
 ```javascript
