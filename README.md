@@ -52,12 +52,15 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 - Order is **not** relevant.
 
 ```javascript
+
+// if shared objec is
 var shared = {
   module1 : require('../something'),
   max: 5,
   fn : () => console.log('hi!')
 }
 
+// callback will be
 var callback = (module1, fn, max) => {
   fn();
   console.log(max);
