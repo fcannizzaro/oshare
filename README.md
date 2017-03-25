@@ -55,11 +55,11 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 
 ## Browser
 
-```javascript
+```html
 <script src="oshare-browser.js"></script>
 ```
 
-```javascript
+```html
 <script>
 
   var shared = {
@@ -71,7 +71,7 @@ share.client('http://localhost:3000', shared, (api, api2) => {
       console.log('Called after 3000 ms!');
     });
   });
-  
+
 </script>
 ```
 
