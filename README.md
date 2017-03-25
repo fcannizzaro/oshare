@@ -28,6 +28,23 @@ share.server(3000, shared, (alert) => {
 });
 ```
 
+api.js
+```javascript
+var run = (cb) => {
+  console.log("wait 3000 ms and run callback");
+  setTimeout(cb, 3000);
+};
+
+var submodule = {
+  hello: (name, age) => {
+    console.log('Hello %s ! Your age is %d', name, age);
+  }
+};
+
+module.exports.run = run;
+module.exports.submodule = submodule;
+```
+
 ## Client
 
 #### client( url: string, shared: object \[, [callback](#callback)\] )
@@ -53,7 +70,7 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 
 ```javascript
 
-// if shared objec is
+// if shared object is
 var shared = {
   module1 : require('../something'),
   max: 5,
