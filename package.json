@@ -17,6 +17,11 @@
     "socket.io": "^1.7.3",
     "socket.io-client": "^1.7.3"
   },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fcannizzaro/oshare.git"
@@ -24,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/fcannizzaro/oshare/issues"
   },
-  "homepage": "https://github.com/fcannizzaro/oshare#readme"
+  "homepage": "https://github.com/fcannizzaro/oshare#readme",
+  "devDependencies": {
+    "babel-preset-latest": "^6.24.0"
+  }
 }

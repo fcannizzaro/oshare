@@ -1,6 +1,3 @@
-var http = require('http');
-var ioServer = require('socket.io');
-var ioClient = require('socket.io-client');
 var dot = require('dot-js')();
 var mock = require('./mock');
 var params = require('./params');

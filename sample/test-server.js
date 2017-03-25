@@ -5,6 +5,8 @@ var shared = {
   api2: require('./api')
 }
 
-share.server(3000, shared, (alert) => {
+var io = share.server(3000, shared, (alert) => {
   alert('hello')
 });
+
+io.origins('*:*')

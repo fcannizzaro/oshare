@@ -53,6 +53,27 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 });
 ```
 
+## Browser
+
+```javascript
+<script src="oshare-browser.js"></script>
+```
+
+```javascript
+<script>
+
+  var shared = {
+    alert: console.log
+  };
+
+  oshare('http://localhost:3000', shared, (api, api2) => {
+    api.run(() => {
+      console.log('Called after 3000 ms!');
+    });
+  });
+</script>
+```
+
 ## Callback
 
 - Arguments **should be key** of shared data of server/client.

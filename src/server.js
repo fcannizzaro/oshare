@@ -6,4 +6,5 @@ module.exports = (port, shared, remote) => {
     socket.configure(shared, client, remote);
   });
   io.listen(port);
+  return io;
 }
