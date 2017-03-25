@@ -38,7 +38,9 @@ exports.configure = (shared, socket, remote) => {
 
   socket.on('share', (data) => {
     mock.input(data, invoke)
-    remote.apply(null, params.from(data, remote));
+    if (remote) {
+      remote.apply(null, params.from(data, remote));
+    }
   });
 
 };
