@@ -2,6 +2,8 @@
 
 Node Object Sharing (Socket) | **Remote Method Invocation** | Support for **callbacks**
 
+[![npm](https://img.shields.io/npm/v/oshare.svg)](https://www.npmjs.com/package/oshare)
+
 # Install
 
 ```sh
