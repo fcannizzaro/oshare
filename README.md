@@ -102,5 +102,5 @@ var callback = (module1, fn, max) => {
 
 ## Supported Languages
 - [x] Javascript
-- [ ] Java
+- [x] Java [oshare-java](https://github.com/fcannizzaro/oshare-java)
 - [ ] Python

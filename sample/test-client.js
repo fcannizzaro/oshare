@@ -5,7 +5,7 @@ var shared = {
 };
 
 share.client('http://localhost:3000', shared, (api, api2) => {
-  api.run(() => {
-    console.log('Called after 3000 ms!');
+  api.run((value, number) => {
+    console.log(`${value} after ${number} ms!`);
   });
 });

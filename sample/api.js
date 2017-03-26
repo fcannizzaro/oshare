@@ -1,6 +1,9 @@
 var run = (cb) => {
   console.log("wait 3000 ms and run callback");
-  setTimeout(cb, 3000);
+  var delay = 2000;
+  setTimeout(() => {
+    cb('Response!', delay);
+  }, delay);
 };
 
 var submodule = {
@@ -9,6 +12,6 @@ var submodule = {
   }
 };
 
-module.exports.valore = 5;
+module.exports.value = 5;
 module.exports.run = run;
 module.exports.submodule = submodule;

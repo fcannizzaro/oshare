@@ -1,7 +1,14 @@
 var dot = require('dot-js')();
+var fs = require('fs');
 var mock = require('./mock');
 var params = require('./params');
 var cb = require('./callback');
+var generator = require('./generator');
+
+exports.generateJava = (shared) => {
+  var code = generator.generate(mock.output(shared));
+  fs.writeFileSync(process.cwd() + '/Remote.java', code, 'utf-8');
+}
 
 exports.configure = (shared, socket, remote) => {
 
@@ -37,10 +44,13 @@ exports.configure = (shared, socket, remote) => {
   });
 
   socket.on('share', (data) => {
-    mock.input(data, invoke)
+
+    data = mock.input(data, invoke)
+
     if (remote) {
       remote.apply(null, params.from(data, remote));
     }
+
   });
 
 };
