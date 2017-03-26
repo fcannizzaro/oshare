@@ -14,7 +14,7 @@ npm i --save oshare
 
 ## Server
 
-#### server( port: int, shared: object \[, [callback](#callback)\] )
+#### server( port: int, shared: object \[, [callback](#callback), [language](#supported-languages)\] )
 
 ```javascript
 var share = require('oshare');
@@ -101,6 +101,9 @@ var callback = (module1, fn, max) => {
 ```
 
 ## Supported Languages
-- [x] Javascript
-- [x] Java [oshare-java](https://github.com/fcannizzaro/oshare-java)
-- [ ] Python
+
+Use **"language"** argument to generate "Remote" class for a client.
+
+- [x] javascript 
+- [x] java [oshare-java](https://github.com/fcannizzaro/oshare-java)
+- [ ] python
