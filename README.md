@@ -105,5 +105,5 @@ var callback = (module1, fn, max) => {
 Use **"language"** argument to generate "Remote" class for a client.
 
 - [x] javascript 
-- [x] java [oshare-java](https://github.com/fcannizzaro/oshare-java)
+- [x] java [oshare-java](https://github.com/fcannizzaro/oshare-java), [oshare-android](https://github.com/fcannizzaro/oshare-android)
 - [ ] python

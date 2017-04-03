@@ -3,7 +3,7 @@ var callbacks = {};
 
 // store callback and assign an id
 var output = (args) => {
-  return args.map(arg => {
+  return (args || []).map(arg => {
     if (typeof arg == 'function') {
       var id = '$cb.' + random(10);
       callbacks[id] = arg;
@@ -15,7 +15,7 @@ var output = (args) => {
 
 // mock callback
 var input = (args, invoke) => {
-  return args.map(arg => {
+  return (args || []).map(arg => {
     if (is(arg)) {
       return function() {
         invoke(arg, Object.values(arguments || {}));
