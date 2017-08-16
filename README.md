@@ -14,17 +14,17 @@ npm i --save oshare
 
 ## Server
 
-#### server( port: int, shared: object \[, [callback](#callback), [language](#supported-languages)\] )
+#### server( port: int, options: object \[, [callback](#callback), [language](#supported-languages)\] )
 
 ```javascript
-var share = require('oshare');
+const share = require('oshare');
 
-var shared = {
+const shared = {
   api: require('./api'),
   api2: require('./api')
 }
 
-share.server(3000, shared, (alert) => {
+share.server(3000, { shared /* , authorization */  }, (alert) => {
   alert('hello')
 });
 ```
@@ -39,16 +39,16 @@ exports.run = (cb) => {
 
 ## Client
 
-#### client( url: string, shared: object \[, [callback](#callback)\] )
+#### client( url: string, options: object \[, [callback](#callback)\] )
 
 ```javascript
-var share = require('oshare');
+const share = require('oshare');
 
-var shared = {
+const shared = {
   alert: console.log
 };
 
-share.client('http://localhost:3000', shared, (api, api2) => {
+share.client('http://localhost:3000', { shared /* , authorization */  }, (api, api2) => {
   api.run(() => {
     console.log('Called after 3000 ms!');
   });
@@ -64,11 +64,11 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 ```html
 <script>
 
-  var shared = {
+  const shared = {
     alert: console.log
   };
 
-  oshare('http://localhost:3000', shared, (api, api2) => {
+  oshare('http://localhost:3000', { shared /* , authorization */ }, (api, api2) => {
     api.run(() => {
       console.log('Called after 3000 ms!');
     });
@@ -76,6 +76,10 @@ share.client('http://localhost:3000', shared, (api, api2) => {
 
 </script>
 ```
+
+## Options
+- **shared**: object to share
+- **authorization**: [optional] auth key to prevent unauthorized rmi access. **Server and Client should have the same key**.
 
 ## Callback
 

@@ -1,11 +1,13 @@
+'use strict';
+
 var socket = require('./code/socket');
 var io = require('socket.io')();
 
-module.exports = (port, options, remote, language) => {
+module.exports = function (port, options, remote, language) {
 
   options = options || {};
 
-  io.on('connection', (client) => {
+  io.on('connection', function (client) {
     socket.configure(options.shared || {}, client, remote, options.authorization);
   });
 
@@ -16,10 +18,10 @@ module.exports = (port, options, remote, language) => {
   generate(options.shared || {}, language);
 
   return io;
-}
+};
 
-var generate = (shared, language) => {
+var generate = function generate(shared, language) {
   if (language == 'java') {
     socket.generateJava(shared);
   }
-}
+};

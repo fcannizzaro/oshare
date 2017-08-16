@@ -1,6 +1,6 @@
 {
   "name": "oshare",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node Object Sharing (Socket) |",
   "main": "index.js",
   "keywords": [
@@ -12,15 +12,19 @@
   "author": "Francesco Cannizzaro <francescosaveriocannizzaro@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dot-js": "^1.0.3",
+    "dot-js": "^1.0.5",
     "random-id": "0.0.2",
-    "socket.io": "^1.7.3",
+    "socket.io": "^1.7.4",
     "socket.io-client": "^1.7.3"
   },
   "babel": {
     "presets": [
       "latest"
     ]
+  },
+  "scripts": {
+    "prepublish": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "browser": "browserify dist/client.js -s oshare --exclude socket.io | uglifyjs > dist/oshare-browser.js"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,5 @@
+'use strict';
+
 var dot = require('dot-js')();
 var fs = require('fs');
 var mock = require('./mock');
@@ -5,17 +7,17 @@ var params = require('./params');
 var cb = require('./callback');
 var generator = require('./generator');
 
-exports.generateJava = (shared) => {
+exports.generateJava = function (shared) {
   var code = generator.generate(mock.output(shared));
   fs.writeFileSync(process.cwd() + '/Remote.java', code, 'utf-8');
-}
+};
 
-exports.configure = (shared, socket, remote, authorization) => {
+exports.configure = function (shared, socket, remote, authorization) {
 
   var authorized = false;
 
   /* Invoke Mock Method on remote */
-  var invoke = (path, args) => {
+  var invoke = function invoke(path, args) {
 
     if (!authorized) {
       return;
@@ -27,11 +29,10 @@ exports.configure = (shared, socket, remote, authorization) => {
       method: path,
       args: args
     });
-
   };
 
   // Method Invocation
-  socket.on('invoke', (data) => {
+  socket.on('invoke', function (data) {
 
     if (!authorized) {
       return;
@@ -42,15 +43,14 @@ exports.configure = (shared, socket, remote, authorization) => {
       return;
     }
 
-    let fn = shared.dot(data.method);
+    var fn = shared.dot(data.method);
 
     if (fn) {
       fn.apply(null, cb.input(data.args, invoke));
     }
-
   });
 
-  socket.on('authorization', (data) => {
+  socket.on('authorization', function (data) {
 
     authorized = authorization == data;
 
@@ -58,19 +58,16 @@ exports.configure = (shared, socket, remote, authorization) => {
       // share methods / constant
       socket.emit('share', mock.output(shared));
     }
-
   });
 
-  socket.on('share', (data) => {
+  socket.on('share', function (data) {
 
-    data = mock.input(data, invoke)
+    data = mock.input(data, invoke);
 
     if (remote) {
       remote.apply(null, params.from(data, remote));
     }
-
   });
 
   socket.emit('authorization', authorization);
-
 };

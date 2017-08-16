@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="oshare-browser.js"></script>
+</head>
+<body>
+
+<script>
+
+  var shared = {
+    alert: console.log
+  };
+
+  var authorization = "$auth-key";
+
+  oshare('http://localhost:3000', { shared, authorization } , (api, api2) => {
+    api.run(() => {
+      console.log('Called after 3000 ms!');
+    });
+  });
+
+</script>
+
+</body>
+</html>
