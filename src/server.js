@@ -1,7 +1,8 @@
 var socket = require('./code/socket');
-var io = require('socket.io')();
 
 module.exports = (port, options, remote, language) => {
+
+  var io = require('socket.io')();
 
   options = options || {};
 

@@ -1,9 +1,10 @@
 'use strict';
 
 var socket = require('./code/socket');
-var io = require('socket.io')();
 
 module.exports = function (port, options, remote, language) {
+
+  var io = require('socket.io')();
 
   options = options || {};
 
