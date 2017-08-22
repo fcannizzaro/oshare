@@ -5,7 +5,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // method invocation
 var mockInvocation = function mockInvocation(invoke, path) {
   return function () {
-    invoke(path.slice(1), Object.values(arguments || {}));
+    invoke(path.slice(1), Array.from(arguments));
   };
 };
 

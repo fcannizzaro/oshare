@@ -1,7 +1,7 @@
 // method invocation
 var mockInvocation = (invoke, path) => {
   return function() {
-    invoke(path.slice(1), Object.values(arguments || {}));
+    invoke(path.slice(1), Array.from(arguments));
   };
 };
 
